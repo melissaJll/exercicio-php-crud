@@ -1,0 +1,10 @@
+```sql
+CREATE DATABASE crud_escola_melissa CHARACTER SET utf8mb4;
+
+CREATE TABLE alunos(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nome VARCHAR(40) NOT NULL,
+    primeira DECIMAL(4,2) NOT NULL,
+    segunda DECIMAL(4,2) NOT NULL
+);
+```
