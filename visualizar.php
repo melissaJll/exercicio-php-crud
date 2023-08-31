@@ -1,3 +1,9 @@
+<?php
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,6 +23,18 @@ para exibir a relação de alunos existentes no banco de dados.
 
 Obs.: não se esqueça de criar também os links dinâmicos para
 as páginas de atualização e exclusão. -->
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Nota 1</th>
+            <th>Nota 2</th>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
 
 
     <p><a href="index.php">Voltar ao início</a></p>

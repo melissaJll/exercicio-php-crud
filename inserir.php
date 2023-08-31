@@ -1,3 +1,16 @@
+<?php
+
+if(isset($_POST['cadastrar'])){
+	$nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
+
+	$primeira = filter_input(INPUT_POST, "primeira", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+
+	$segunda = filter_input(INPUT_POST, "segunda", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+
+	inserirAlunos($conexao, $nome, $primeira, $segunda);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,15 +28,15 @@
 
 	<form action="#" method="post">
 	    <p><label for="nome">Nome:</label>
-	    <input type="text" id="nome" required></p>
+	    <input type="text" id="nome" name="nome" required></p>
         
       <p><label for="primeira">Primeira nota:</label>
-	    <input type="number" id="primeira" step="0.01" min="0.00" max="10.00" required></p>
+	    <input type="number" id="primeira" step="0.01" min="0.00" max="10.00" required ></p>
 	    
 	    <p><label for="segunda">Segunda nota:</label>
 	    <input type="number" id="segunda" step="0.01" min="0.00" max="10.00" required></p>
 	    
-      <button>Cadastrar aluno</button>
+      <button name="cadastrar">Cadastrar aluno</button>
 	</form>
 
     <hr>
