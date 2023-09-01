@@ -5,23 +5,23 @@ $usuario = "root";
 $senha = "";
 $banco = "crud_escola_melissa";
 
-//Conexão com Objeto PDO
 try {
-    $conexão = new PDO(
+//Conexão com Objeto PDO
+    $conexao = new PDO(
         "mysql:host=$servidor;
-        dbname=$banco; 
+        dbname=$banco;
         charset=utf8",
-        $usuario, $senha
+         $usuario, $senha
     );
 
-    //Habilita sinalização de erros
     $conexao->setAttribute(
         PDO::ATTR_ERRMODE, 
         PDO::ERRMODE_EXCEPTION
     ); 
 
-} catch (Exception $erro) {
-    die("Erro". $erro->getMessage());
+} catch (Exception $erro) { 
+    die("Erro!!! :".$erro->getMessage());
 }
+ 
 
 ?>

@@ -1,5 +1,10 @@
 <?php
 
+require_once "src/funcoes-alunos.php";
+
+$listaAlunos = lerAlunos($conexao);
+
+// $quantidade = count($listaDeAlunos); nº de alunos
 
 ?>
 
@@ -30,10 +35,31 @@ as páginas de atualização e exclusão. -->
             <th>Nome</th>
             <th>Nota 1</th>
             <th>Nota 2</th>
+            <th>Média</th>
+            <th></th>
         </tr>
+        
+ <?php foreach ($listaAlunos as $aluno) { ?>
         <tr>
-            <td></td>
+            <td><?=$aluno["id"]?></td>
+            <td><?=$aluno["nome"]?></td>
+            <td><?=$aluno["primeira"]?></td>
+            <td><?=$aluno["segunda"]?></td>
+
+            <!-- Média -->
+            <!-- <td>
+
+                <//?=calculoMedia($itemAluno["primeira"], $itemAluno["segunda"])?>
+
+            </td> -->
+
+            <td>
+                <a href="atualizar.php?id=<?=$itemAluno["id"]?>">Editar</a>
+
+                <a class ="excluir" href="deletar.php?id=<?=$itemAluno["id"]?>">Excluir</a>
+            </td> 
         </tr>
+<?php }?>
     </table>
 
 

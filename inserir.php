@@ -1,6 +1,10 @@
 <?php
 
+
 if(isset($_POST['cadastrar'])){
+
+	require_once "../src/funcoes-alunos.php";
+
 	$nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
 
 	$primeira = filter_input(INPUT_POST, "primeira", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
@@ -8,7 +12,9 @@ if(isset($_POST['cadastrar'])){
 	$segunda = filter_input(INPUT_POST, "segunda", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
 	inserirAlunos($conexao, $nome, $primeira, $segunda);
-}
+
+	header("location:visualizar.php");
+};
 ?>
 
 <!DOCTYPE html>
@@ -31,10 +37,10 @@ if(isset($_POST['cadastrar'])){
 	    <input type="text" id="nome" name="nome" required></p>
         
       <p><label for="primeira">Primeira nota:</label>
-	    <input type="number" id="primeira" step="0.01" min="0.00" max="10.00" required ></p>
+	    <input type="number" id="primeira" step="0.01" min="0.00" max="10.00" required name="primeira"></p>
 	    
 	    <p><label for="segunda">Segunda nota:</label>
-	    <input type="number" id="segunda" step="0.01" min="0.00" max="10.00" required></p>
+	    <input type="number" id="segunda" name="segunda" step="0.01" min="0.00" max="10.00" required></p>
 	    
       <button name="cadastrar">Cadastrar aluno</button>
 	</form>
