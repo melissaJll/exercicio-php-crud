@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans:wght@400;700&display=swap');
+
 html { font-size: 16px;}
-body { font-family: "Segoe UI", Arial, sans-serif; }
+body { font-family: 'Lato', sans-serif;}
 
 .container {
     max-width: 1200px;
@@ -8,22 +10,22 @@ body { font-family: "Segoe UI", Arial, sans-serif; }
 }
 
 a { 
-    color: blue;
+    color: rgb(118, 98, 165);
     font-weight: bold;
     text-decoration: none;
     font-size: 1rem;
 }
 
-h2 a { font-size: 0.9rem;}
+/* h2 a { font-size: 0.9rem;}
 
 a:hover, a:focus { text-decoration: underline;}
 
-table td {
-    border: solid 1px #000;
-    background-color: beige;
-  }
-  table{
+
+table td{
     border-collapse: separate; 
-    border-spacing: 10px;
+    border-spacing: 40px;
     margin: 0 0 0 0;
-  }
+}
+table th{
+    background-color: rgb(118, 98, 165);
+} */

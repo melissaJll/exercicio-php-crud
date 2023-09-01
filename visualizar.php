@@ -16,6 +16,7 @@ $listaAlunos = lerAlunos($conexao);
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lista de alunos - Exercício CRUD com PHP e MySQL</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <link href="css/style.css" rel="stylesheet">
 </head>
 
@@ -31,13 +32,14 @@ para exibir a relação de alunos existentes no banco de dados.
 Obs.: não se esqueça de criar também os links dinâmicos para
 as páginas de atualização e exclusão. -->
 
-    <table>
+    <table class="table table-success table-striped">
         <tr>
             <th>Id</th>
             <th>Nome</th>
             <th>Nota 1</th>
             <th>Nota 2</th>
             <th>Média</th>
+            <th>Situação</th>
             <th></th>
         </tr>
         
@@ -50,12 +52,20 @@ as páginas de atualização e exclusão. -->
 
             <!-- Média -->
             <td>
-                <?=calcularMedia($aluno["primeira"], $aluno["segunda"])?>
+                <?=number_format($aluno["Média"],2)?>
+            </td>
+
+            <!-- Situação -->
+            <td style="color: <?=situacaoCor(number_format($aluno["Média"],2))?>;"> 
+                <?=situacaoAluno(number_format($aluno["Média"], 2))?>
             </td>
 
             <td>
-                <a href="atualizar.php?id=<?=$aluno["id"]?>">Editar</a>
-                <a class ="excluir" href="deletar.php?id=<?=$aluno["id"]?>">Excluir</a>
+
+                <a href="atualizar.php?id=<?=$aluno["id"]?>">Editar </a>
+
+                <a class="excluir" href="excluir.php?id=<?=$aluno["id"]?>">Excluir &#215;</a>
+
             </td> 
         </tr>
 <?php }?>
@@ -65,5 +75,7 @@ as páginas de atualização e exclusão. -->
     <p><a href="index.php">Voltar ao início</a></p>
 </div>
 
+<script src="js/confirmar-exclusao.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
