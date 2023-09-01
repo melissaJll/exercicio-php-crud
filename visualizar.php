@@ -56,12 +56,12 @@ as páginas de atualização e exclusão. -->
             </td>
 
             <!-- Situação -->
-            <td style="color: <?=situacaoCor(number_format($aluno["Média"],2))?>;"> 
-                <?=situacaoAluno(number_format($aluno["Média"], 2))?>
+            <td>
+                <?=situacaoCor($aluno["Média"])?>
             </td>
 
+            <!-- Alterações -->
             <td>
-
                 <a href="atualizar.php?id=<?=$aluno["id"]?>">Editar </a>
 
                 <a class="excluir" href="excluir.php?id=<?=$aluno["id"]?>">Excluir &#215;</a>

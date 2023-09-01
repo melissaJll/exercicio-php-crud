@@ -5,23 +5,23 @@
 //     return number_format($media,2);
 // }
 
-function situacaoAluno(float $notaFinal):string{
-    if($notaFinal >= 7){
+/* function situacaoAluno(float $notaFinal):string{
+     if($notaFinal >= 7){
         return "Aprovado";
     }elseif($notaFinal >= 5){
-        return "Recuperação";
-    }else{
-        return "Reprovado";
+         return "Recuperação";
+     }else{
+         return "Reprovado";
     }
-}
+ }*/
 
 function situacaoCor(float $notaFinal){
     if($notaFinal >= 7){
-        return "green";
+        return "<span  class='aprovado'> <b>Aprovado</b></span >";
     }elseif($notaFinal >= 5){
-        return "blue";
+        return  "<span  class='recuperacao'><b>Recuperação</b></span >";
     }else{
-        return "red";
+        return "<span class='reprovado'><b>Reprovado</b></span >";
     }
 }
 

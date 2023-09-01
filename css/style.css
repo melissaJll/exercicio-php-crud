@@ -16,6 +16,18 @@ a {
     font-size: 1rem;
 }
 
+
+.aprovado{
+    color: green;
+}
+.recuperacao{
+    color: rgb(47, 85, 189);
+}
+.reprovado{
+    color: rgb(214, 23, 23);
+}
+
+
 /* h2 a { font-size: 0.9rem;}
 
 a:hover, a:focus { text-decoration: underline;}
