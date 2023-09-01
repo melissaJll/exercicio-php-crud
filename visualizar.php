@@ -1,6 +1,7 @@
 <?php
 
 require_once "src/funcoes-alunos.php";
+require_once "src/funcoes-utilitarias.php";
 
 $listaAlunos = lerAlunos($conexao);
 
@@ -17,6 +18,7 @@ $listaAlunos = lerAlunos($conexao);
 <title>Lista de alunos - Exercício CRUD com PHP e MySQL</title>
 <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
 <div class="container">
     <h1>Lista de alunos</h1>
@@ -47,16 +49,13 @@ as páginas de atualização e exclusão. -->
             <td><?=$aluno["segunda"]?></td>
 
             <!-- Média -->
-            <!-- <td>
-
-                <//?=calculoMedia($itemAluno["primeira"], $itemAluno["segunda"])?>
-
-            </td> -->
+            <td>
+                <?=calcularMedia($aluno["primeira"], $aluno["segunda"])?>
+            </td>
 
             <td>
-                <a href="atualizar.php?id=<?=$itemAluno["id"]?>">Editar</a>
-
-                <a class ="excluir" href="deletar.php?id=<?=$itemAluno["id"]?>">Excluir</a>
+                <a href="atualizar.php?id=<?=$aluno["id"]?>">Editar</a>
+                <a class ="excluir" href="deletar.php?id=<?=$aluno["id"]?>">Excluir</a>
             </td> 
         </tr>
 <?php }?>

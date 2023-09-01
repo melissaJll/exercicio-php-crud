@@ -34,9 +34,5 @@ function lerAlunos(PDO $conexao): array{
     return $resultado;
 }
 
-// function calculoMedia(float $nota1, float $nota2){
-//     $media = ( $nota1 +  $nota2) / 2;
-//     return $media;
-// }
 
 ?>

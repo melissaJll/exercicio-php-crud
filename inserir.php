@@ -3,7 +3,7 @@
 
 if(isset($_POST['cadastrar'])){
 
-	require_once "../src/funcoes-alunos.php";
+	require_once "src/funcoes-alunos.php";
 
 	$nome = filter_input(INPUT_POST, "nome", FILTER_SANITIZE_SPECIAL_CHARS);
 
