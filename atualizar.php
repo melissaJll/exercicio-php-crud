@@ -38,23 +38,23 @@ if(isset($_POST["atualizar-dados"])){
 	    <input type="text" name="nome" id="nome" value="<?=$aluno["nome"]?>" required></p>
         
         <p><label for="primeira">Primeira nota:</label>
-	    <input name="primeira" type="number" id="primeira" step="0.01" min="0.00" max="10.00" value="<?=$aluno["primeira"]?>" required></p>
+	    <input class="primeira" name="primeira"  type="number" id="primeira" step="0.01" min="0.00" max="10.00" value="<?=$aluno["primeira"]?>" required></p>
 	    
 	    <p><label for="segunda">Segunda nota:</label>
-	    <input name="segunda" type="number" id="segunda" step="0.01" min="0.00" max="10.00" value="<?=$aluno["segunda"]?>" required></p>
+	    <input class="segunda" name="segunda" type="number" id="segunda" step="0.01" min="0.00" max="10.00" value="<?=$aluno["segunda"]?>" required></p>
 
         <p>
         <!-- Campo somente leitura e desabilitado para edição.
         Usado apenas para exibição do valor da média -->
             <label for="media">Média:</label>
-            <input name="media" type="number" id="media" step="0.01" min="0.00" max="10.00" value="<?=number_format($aluno["Média"],2)?>" readonly disabled>
+            <input class="media" name="media" type="number" id="media" step="0.01" min="0.00" max="10.00" value="<?=number_format($aluno["Média"],2)?>" readonly disabled>
         </p>
 
         <p>
         <!-- Campo somente leitura e desabilitado para edição 
         Usado apenas para exibição do texto da situação -->
             <label for="situacao">Situação:</label>
-	        <input type="text" name="situacao" id="situacao" value="<?=situacaoAluno($aluno["Média"])?>" readonly disabled>
+	        <input class="situacao" type="text" name="situacao" id="situacao" value="<?=situacaoAluno($aluno["Média"])?>" readonly disabled>
         </p>
 	    
         <button name="atualizar-dados">Atualizar dados do aluno</button>
@@ -65,6 +65,6 @@ if(isset($_POST["atualizar-dados"])){
 
 </div>
 
-
+<script src="js/mostrar-media.js"></script>
 </body>
 </html>
