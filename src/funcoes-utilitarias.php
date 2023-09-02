@@ -5,7 +5,8 @@
 //     return number_format($media,2);
 // }
 
-/* function situacaoAluno(float $notaFinal):string{
+
+function situacaoAluno(float $notaFinal):string{
      if($notaFinal >= 7){
         return "Aprovado";
     }elseif($notaFinal >= 5){
@@ -13,7 +14,7 @@
      }else{
          return "Reprovado";
     }
- }*/
+}
 
 function situacaoCor(float $notaFinal){
     if($notaFinal >= 7){

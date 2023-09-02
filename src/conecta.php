@@ -1,9 +1,9 @@
 <?php
 
 $servidor = "localhost";
+$banco = "crud_escola_melissa";
 $usuario = "root";
 $senha = "";
-$banco = "crud_escola_melissa";
 
 try {
 //Conexão com Objeto PDO
