@@ -55,7 +55,7 @@ a:hover, a:focus { text-decoration: underline;}
      justify-content: center;
      align-items: center;
 }
-.navbar-light{
+.bg-light{
     background-color: #7662a5 !important;
     margin-bottom: 50px;
 }
@@ -82,6 +82,18 @@ a:hover, a:focus { text-decoration: underline;}
     border-radius: 100%;
     padding: 8px;
 }
+
+.box-search{
+    display: flex !important; 
+    justify-content: center !important;
+    gap: .1% !important;
+}
+.not-found{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+}
+
 h1{
     color: #ee4040;
     font-weight: 600;

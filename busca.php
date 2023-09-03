@@ -1,12 +1,17 @@
+<!-- require_once ""; -->
 <?php
 
-require_once "src/funcoes-alunos.php";
 require_once "src/funcoes-utilitarias.php";
+require_once "src/funcoes-alunos.php";
 
-$listaAlunos = lerAlunos($conexao);
+$nome = "%".trim($_GET['buscar'])."%";
 
+if(isset($_GET['buscar'])){
 
-// $quantidade = count($listaDeAlunos); nº de alunos
+    $listaAlunos = buscarAluno($conexao, $nome);
+}   
+
+//     var_dump($listaAlunos)
 ?>
 
 
@@ -23,18 +28,8 @@ $listaAlunos = lerAlunos($conexao);
 
 <body>
 
-  <!-- Barra de Pesquisa -->
-  
-<nav class="bg-light py-3">
-    <form action="busca.php">
-    <div class="box-search">
-        <input name="buscar" type="search" class="form-control w-25" placeholder="Pesquisar" id="pesquisar">
-        <button class="btn border my-2 my-sm-0 px-2" type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #fafafa;"></i></button>
-    </div>
-</form>
-</nav>
 <div class="container">
-    <h1 class="text-center">Lista de alunos</h1>
+    <h1 class="text-center">Busca de alunos</h1>
     <hr>
 
    <!-- Aqui você deverá criar o HTML que quiser e o PHP necessários
@@ -57,33 +52,44 @@ as páginas de atualização e exclusão. -->
         </thead>
         
  <tbody class="table-striped">
-     <?php foreach ($listaAlunos as $aluno) { ?>
-            <tr >
-                <td><?=$aluno["id"]?></td>
-                <td><?=$aluno["nome"]?></td>
-                <td><?=$aluno["primeira"]?></td>
-                <td><?=$aluno["segunda"]?></td>
-                <!-- Média -->
-                <td>
-                    <?=number_format($aluno["Média"],2)?>
-                </td>
-                <!-- Situação -->
-                <td>
-                    <?=situacaoCor($aluno["Média"])?>
-                </td>
-                <!-- Alterações - Editar -->
-                <td>
-                    <a href="atualizar.php?id=<?=$aluno["id"]?>">Editar </a>
-                    <i class="fa-solid fa-pencil" style="color: #7662a5;"></i>
-                </td>
-     
-                <!-- Excluir -->
-                <td>
-                    <a class="excluir" href="excluir.php?id=<?=$aluno["id"]?>">Excluir</a>
-                    <i class="fa-solid fa-xmark" style="color: #7662a5;"></i>
-                </td>
-            </tr>
-     <?php }?>
+        <?php
+        if (count($listaAlunos)) {
+            foreach ($listaAlunos as $aluno) { ?>
+                <tr >
+                    <td><?=$aluno["id"]?></td>
+                    <td><?=$aluno["nome"]?></td>
+                    <td><?=$aluno["primeira"]?></td>
+                    <td><?=$aluno["segunda"]?></td>
+                    <!-- Média -->
+                    <td>
+                        <?=number_format($aluno["Média"],2)?>
+                    </td>
+                    <!-- Situação -->
+                    <td>
+                        <?=situacaoCor($aluno["Média"])?>
+                    </td>
+                    <!-- Alterações -->
+                    <td>
+                        <a href="atualizar.php?id=<?=$aluno["id"]?>">Editar </a>
+                        <i class="fa-solid fa-pencil" style="color: #7662a5;"></i>
+                    </td>
+                         
+                    <!-- Excluir -->
+                    <td>
+                        <a class="excluir" href="excluir.php?id=<?=$aluno["id"]?>">Excluir</a>
+                        <i class="fa-solid fa-xmark" style="color: #7662a5;"></i>
+                    </td>
+                </tr>
+                <?php
+         }
+            
+        }
+        else{?>
+            <div class="not-found my-5 text-center">
+                <p>Sem Resultados!</p>
+                <i class="fa-regular fa-face-sad-tear fa-2xl my-1" style="color: #eb2d37;"></i>
+            </div>
+        <?php } ?>
  </tbody>
     </table>
 
@@ -94,7 +100,7 @@ as páginas de atualização e exclusão. -->
             <a href="index.php">Voltar ao início</a></button>
         <button type="button" class="btn btn-secondary">
             <i class="fa-regular fa-plus" style="color: #f8f7f7;"></i>
-            <a href="inserir.php">Inserir novo aluno</a>
+            <a href="visualizar.php">Nova Busca</a>
         </button>
     </div>
 </div>

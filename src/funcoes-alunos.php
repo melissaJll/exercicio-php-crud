@@ -33,7 +33,22 @@ function lerAlunos(PDO $conexao): array{
     }
     return $resultado;
 }
+function buscarAluno(PDO $conexao, string $nome): array{
+    $sql = "SELECT id, nome, primeira, segunda, (primeira+segunda)/2 as 'Média' FROM alunos
+    WHERE nome LIKE :nome";
 
+    try {
+        $consulta = $conexao->prepare($sql);
+        $consulta ->bindValue(":nome", $nome, PDO::PARAM_STR );
+
+        $consulta -> execute();
+        $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+
+    } catch (Exception $erro) {
+        die("Nenhuma busca". $erro->getMessage());
+    }
+    return $resultado;
+}
 
 //Vizualização nos input de atualizar.php
 function lerAluno(PDO $conexao, int $id): array{
