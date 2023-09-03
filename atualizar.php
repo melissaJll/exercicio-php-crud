@@ -23,7 +23,9 @@ if(isset($_POST["atualizar-dados"])){
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Atualizar dados - Exercício CRUD com PHP e MySQL</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <link href="css/style.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -57,14 +59,23 @@ if(isset($_POST["atualizar-dados"])){
 	        <input class="situacao" type="text" name="situacao" id="situacao" value="<?=situacaoAluno($aluno["Média"])?>" readonly disabled>
         </p>
 	    
-        <button name="atualizar-dados">Atualizar dados do aluno</button>
+        <button name="atualizar-dados" class="btn btn-light" name="cadastrar">
+	  	<i class="fa-regular fa-plus" style="color: #f8f7f7;"></i>
+            <b>Atualizar dados do aluno</b>
+        </button>
 	</form>    
     
     <hr>
-    <p><a href="visualizar.php">Voltar à lista de alunos</a></p>
+    <p>
+        <a href="visualizar.php">Voltar à lista de alunos</a>
+        <i class="fa-solid fa-list" style="color: #7662a5;"></i>
+    </p>
 
 </div>
 
+
+
 <script src="js/mostrar-media.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

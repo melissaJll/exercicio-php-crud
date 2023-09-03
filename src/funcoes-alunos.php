@@ -34,6 +34,7 @@ function lerAlunos(PDO $conexao): array{
     return $resultado;
 }
 
+
 //Vizualização nos input de atualizar.php
 function lerAluno(PDO $conexao, int $id): array{
 
