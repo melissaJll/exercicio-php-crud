@@ -69,7 +69,9 @@ as páginas de atualização e exclusão. -->
                 </td>
                 <!-- Situação -->
                 <td>
-                    <?=situacaoCor($aluno["Média"])?>
+                    <b class="<?=strtr(situacaoAluno($aluno["Média"]), $caracteres_sem_acento)?>">
+                        <?=situacaoAluno($aluno["Média"])?>
+                    </b>
                 </td>
                 <!-- Alterações - Editar -->
                 <td>

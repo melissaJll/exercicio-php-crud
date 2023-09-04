@@ -18,13 +18,13 @@ a {
 }
 
 
-.aprovado{
+.Aprovado{
     color: green;
 }
-.recuperacao{
+.Recuperacao{
     color: rgb(47, 85, 189);
 }
-.reprovado{
+.Reprovado{
     color: rgb(214, 23, 23);
 }
 

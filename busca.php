@@ -51,7 +51,7 @@ as páginas de atualização e exclusão. -->
             </tr>
         </thead>
         
- <tbody class="table-striped">
+        <tbody class="table-striped">
         <?php
         if (count($listaAlunos)) {
             foreach ($listaAlunos as $aluno) { ?>
@@ -64,11 +64,15 @@ as páginas de atualização e exclusão. -->
                     <td>
                         <?=number_format($aluno["Média"],2)?>
                     </td>
+
                     <!-- Situação -->
                     <td>
-                        <?=situacaoCor($aluno["Média"])?>
+                    <b class="<?=strtr(situacaoAluno($aluno["Média"]), $caracteres_sem_acento)?>">
+                        <?=situacaoAluno($aluno["Média"])?>
+                    </b>
                     </td>
-                    <!-- Alterações -->
+
+                    <!-- Alterações-Editar -->
                     <td>
                         <a href="atualizar.php?id=<?=$aluno["id"]?>">Editar </a>
                         <i class="fa-solid fa-pencil" style="color: #7662a5;"></i>
@@ -90,7 +94,7 @@ as páginas de atualização e exclusão. -->
                 <i class="fa-regular fa-face-sad-tear fa-2xl my-1" style="color: #eb2d37;"></i>
             </div>
         <?php } ?>
- </tbody>
+        </tbody>
     </table>
 
     <!-- <p><a href="index.php">Voltar ao início</a></p> -->
