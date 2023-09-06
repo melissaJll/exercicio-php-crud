@@ -27,11 +27,11 @@ $listaAlunos = lerAlunos($conexao);
   
 <nav class="bg-light py-3">
     <form action="busca.php">
-    <div class="box-search">
-        <input name="buscar" type="search" class="form-control w-25" placeholder="Pesquisar" id="pesquisar">
-        <button class="btn border my-2 my-sm-0 px-2" type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #fafafa;"></i></button>
-    </div>
-</form>
+        <div class="box-search">
+            <input name="buscar" type="search" class="form-control w-25" placeholder="Pesquisar" id="pesquisar">
+            <button class="btn border my-2 my-sm-0 px-2" type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #fafafa;"></i></button>
+        </div>
+    </form>
 </nav>
 <div class="container">
     <h1 class="text-center">Lista de alunos</h1>
